@@ -7,3 +7,7 @@ variable "zone_id" {}
 variable "sg1_id" {}
 variable "cloud_init" {}
 variable "internal_domain" {}
+/* provider */
+variable "region"               {}
+variable "access_key"           {}
+variable "secret_key"           {}
