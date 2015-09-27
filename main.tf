@@ -16,7 +16,7 @@ resource "template_file" "yaml" {
 }
 
 resource "aws_instance" "ec2" {
-  count = "${var.instance_cont}"
+  count = "${var.instance_count}"
   ami = "${var.ami}"
   instance_type = "${var.instance_type}"
   subnet_id = "${var.subnet_id}"
@@ -30,7 +30,7 @@ resource "aws_instance" "ec2" {
 }
 
 resource "aws_route53_record" "host" {
-  count = "${var.instance_cont}"
+  count = "${var.instance_count}"
   zone_id = "${var.zone_id}"
   name = "${var.hostname}${count.index+1}"
   type = "A"
