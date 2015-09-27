@@ -1,6 +1,7 @@
 variable "hostname" {}
 variable "ami" {}
 variable "instance_type" {}
+variable "instance_count" {}
 variable "subnet_id" {}
 variable "key_name" {}
 variable "zone_id" {}
