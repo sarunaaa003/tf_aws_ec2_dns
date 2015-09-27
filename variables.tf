@@ -4,7 +4,7 @@ variable "instance_type" {}
 variable "subnet_id" {}
 variable "key_name" {}
 variable "zone_id" {}
-variable "sg1_id" {}
+variable "sg_ids" {}
 variable "cloud_init" {}
 variable "internal_domain" {}
 /* provider */

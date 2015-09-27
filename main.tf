@@ -18,7 +18,7 @@ resource "aws_instance" "ec2" {
   ami = "${var.ami}"
   instance_type = "${var.instance_type}"
   subnet_id = "${var.subnet_id}"
-  security_groups = [ "${var.sg1_id}" ]
+  security_groups = [ "${split(",", var.sg_ids)}" ]
   key_name = "${var.key_name}"
   source_dest_check = false
   user_data = "${template_file.yaml.rendered}"
