@@ -37,3 +37,12 @@ resource "aws_route53_record" "host" {
   ttl = "300"
   records = ["${element(aws_instance.ec2.*.private_ip, count.index)}"]
 }
+
+resource "aws_route53_record" "host-rev" {
+  count = "${var.instance_count}"
+  zone_id = "${var.rev_zone_id}"
+  name = "${element(split(".",element(aws_instance.ec2.*.private_ip, count.index)),3)}.${element(split(".",element(aws_instance.ec2.*.private_ip, count.index)),2)}"
+  type = "PTR"
+  ttl = "300"
+  records = ["${var.hostname}${count.index+1}.${var.internal_domain}."]
+}

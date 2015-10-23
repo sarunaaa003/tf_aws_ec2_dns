@@ -5,6 +5,7 @@ variable "instance_count" {}
 variable "subnet_id" {}
 variable "key_name" {}
 variable "zone_id" {}
+variable "rev_zone_id" {}
 variable "sg_ids" {}
 variable "cloud_init" {}
 variable "internal_domain" {}
